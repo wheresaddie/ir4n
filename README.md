@@ -4,24 +4,27 @@ ir4n p2p/ops
 
 ## Introduction
 
+First, test your browser to see how well you are protected from tracking and fingerprinting, cover Your Tracks shows you how trackers see your browser. It provides you with an overview of your browser’s most unique and identifying characteristics:
+https://coveryourtracks.eff.org/
+
 Internet is heavily restricted on mobile (3G/4G) and residential (ADSL/TD-LTE) networks and connecting to VPNs and websites outside Iran is close to impossible, Tor is not working reliably as the Tor bridges are outside Iran and mostly inaccessible to people inside Iran. On the other hand, the government has not yet blocked the Internet access on machines located inside Iranian data centers, and people can easily connect to these websites and servers.
 
-### How can I help?
+### Connecting to Signal 
 
-We need servers and we need help setting those servers up.
+# Signal TLS Proxy
 
-| Who am I?                                                | How can I help?                                              |
-| -------------------------------------------------------- | ------------------------------------------------------------ |
-| Iranian expat                                            | If you can, purchase a server inside Iran and send us the IP address and ssh credentials by emailing InternetForIran@proton.me. We will set up the server and send the VPN details back to you to share with your friends and family inside Iran. |
-| Tech company owner/founder/C-level exec inside Iran      | You probably already have servers inside Iran. Use this document to convert one of your servers (or a new server) to set up a VPN for your team. Ask your team to use it and share the VPN details and the Tor bridge with their family and friends. You'll have a real business usecase to justify creating the VPN server even if the government comes to your door. |
-| Developer / Sys Admin / DevOps engineer inside Iran      | **We do not recommend you purchasing servers from Iranian data centers for setting up VPN services  yourself. The server IP address which you will share with your friends and family can be easily traced back to your identity.** <br />Contact your friends and family outside Iran and ask them to purchase a server from an Iranian datacenter and give you the details. Set it up by following this guide and share the details with your friends and family. |
-| Someone who has a recently deceased relative inside Iran | First of all, sorry for your loss. :( One way you can help is to use the identity and debit card of your deceased family member to purchase a server in one of the Iranian datacenters and send us the IP address and ssh credentials by emailing InternetForIran@proton.me. We will set up the server and send the VPN details back to you to use and share with your friends and family. The government won't be able to arrest your deceased family member, and won't be able to prove that you used their identity and debit card information to purchase the servers.<br />**Remember, it is important that you use both their identity AND debit card to make the purchase, if you use your own card or identity, the government will be able to trace it back to you.** |
-| Regular person in Iran                                   | **We do not recommend you purchasing servers from Iranian data centers for setting up VPN services  yourself. The server IP address which you will share with your friends and family can be easily traced back to your identity.**<br /> Send this document to your technical friends. Ask your family members outside Iran to purchase server. Retweet and like our tweets and get the word out. |
-| VPN provider outside Iran                                | We need VPNs outside Iran (helps us replace Machine A below with a VPN). Please send us VPN connection details (preferably without data usage limits, OpenVPN and OpenConnect work best) by emailing InternetForIran@proton.me. |
-| Hacker group                                             | If you compromise a server inside Iran and gain ssh access to, use this guide to set up a VPN server on and share the details with us and your followers. |
-| Developer / Sys Admin / DevOps engineer anywhere         | We have reports that V2Ray VMess and ShadowSocks are working inside Iran even at times when most other tools and protocols don't. We haven't been able to reliably deploy and test this (there are many configuration options and it's not clear which methods are working). Please create an issue or send a PR if you know how it works and how to deploy it. <br />We also need your help with improving this document: Do you see a potential security issue? Can you help make the deployment process easier or automate the installation through the use of docker containers and shell scripts? Contributions are welcome :) |
+To run a Signal TLS proxy, you will need a host that has ports 80 and 443 available and a domain name that points to that host.
 
-### Overview
+1. Install docker and docker-compose (`apt update && apt install docker docker-compose`)
+1. Ensure your current user has access to docker (`adduser $USER docker`)
+1. Clone this repository
+1. `./init-certificate.sh`
+1. `docker-compose up --detach`
+
+Your proxy is now running! You can share this with the URL `https://signal.tube/#<your_host_name>`
+
+
+### VPN /Tor Bridge
 
 To get around the restrictions, you need to have two servers:
 
@@ -527,5 +530,11 @@ distribute the bridgeline you got in section 3.7.2, replacing the IP address wit
 
 ```
 obfs4 200.0.0.0:3355 AAABBBBCCCDDDD cert=abcdx iat-mode=0
+
 ```
+
+
+
+
+
 
