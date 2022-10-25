@@ -1,5 +1,4 @@
-# ir4n
-ir4n p2p/ops 
+# e2ee p2p/ops 
 
 
 ## Introduction
@@ -7,7 +6,7 @@ ir4n p2p/ops
 First, test your browser to see how well you are protected from tracking and fingerprinting, cover Your Tracks shows you how trackers see your browser. It provides you with an overview of your browser’s most unique and identifying characteristics:
 https://coveryourtracks.eff.org/
 
-Internet is heavily restricted on mobile (3G/4G) and residential (ADSL/TD-LTE) networks and connecting to VPNs and websites outside Iran is close to impossible, Tor is not working reliably as the Tor bridges are outside Iran and mostly inaccessible to people inside Iran. On the other hand, the government has not yet blocked the Internet access on machines located inside Iranian data centers, and people can easily connect to these websites and servers.
+Internet is heavily restricted on mobile (3G/4G) and residential (ADSL/TD-LTE) networks and connecting to VPNs and websites outside the region is close to impossible, Tor is not working reliably as the Tor bridges are outside Iran and mostly inaccessible to people inside. On the other hand, the government has not yet blocked the Internet access on machines located inside the regime/region data centers, and people can easily connect to these websites and servers.
 
 ### Connecting to Signal 
 
